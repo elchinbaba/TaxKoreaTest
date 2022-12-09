@@ -17,8 +17,8 @@ public class Customer {
         this.division = division;
         this.usage = usage;
 
-        if (Rates.findByCode(division) == Rates.MILITARY) {
-            this.note = "사용금액";
+        if (Rates.findByDivisionCode(division) == Rates.MILITARY) {
+            this.note = "일괄징수";
         } else {
             this.note = "";
         }

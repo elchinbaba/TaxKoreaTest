@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 
 public class Output {
     private void line() {
-        line('-', 63);
+        line('-', 69);
     }
     private void line(char ch, int length) {
         for (int i = 0; i < length; i++)
@@ -15,8 +15,9 @@ public class Output {
         System.out.println();
     }
     public void output(Customer[] customers) {
+        System.out.println("                     수   도   요    금                           ");
         line();
-        System.out.println("   이름    사번      구분   사용량  사용금액   TAX   사용액    사용   ");
+        System.out.println("   번호    이름     구분    사용양    사용금액      TAX    납부액    비고   ");
         line();
 
         for (int i = 0; i < customers.length; i++) {
@@ -31,7 +32,7 @@ public class Output {
     public void output(Customer customer) {
         DecimalFormat df = new DecimalFormat("#,###");
 
-        System.out.printf("   %s   %s   %s   %s  %s  %s  %s  %s",
+        System.out.printf("   %s   %s  %s    %s    %s     %s   %s   %s",
                 customer.getNumber(),
                 customer.getName(),
                 new Rate().getDivisionName(customer.getDivision()),
